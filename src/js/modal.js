@@ -23,5 +23,6 @@ for (let index = 0; index < modalTriggers.length; index++) {
         modalWrapper.append(modalOverlay);
         modalWrapper.append(modalContent);
         document.body.append(modalWrapper);
+
     })
 }
