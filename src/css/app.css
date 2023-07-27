@@ -85,6 +85,11 @@
     .slider .thumbnail .item.selected:after{
         @apply bg-opacity-35 border-opacity-100
     }
+
+    .slider .priview {
+        @apply mb-4 px-4;
+        height: 320px;
+    }
 }
 
 
