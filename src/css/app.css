@@ -86,7 +86,7 @@
         @apply bg-opacity-35 border-opacity-100
     }
 
-    .slider .priview {
+    .slider .preview {
         @apply mb-4 px-4;
         height: 320px;
     }
@@ -111,7 +111,7 @@
         @apply w-auto order-first block overflow-visible pl-0;
     }
 
-    .slider .priview {
+    .slider .preview {
         height: 609px;
         width: 560px;
     }
