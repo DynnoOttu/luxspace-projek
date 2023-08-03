@@ -93,6 +93,7 @@
               </li>
               <li class="ml-6">
                 <a
+                  id="header-cart"
                   href="cart.html"
                   class="flex items-center justify-center w-8 h-8 text-black hover:text-white cart cart-filled"
                 >
@@ -158,7 +159,7 @@
       <div class="container mx-auto px-4">
         <div class="flex -mx-4 flex-wrap">
           <!-- START: Shipping Cart -->
-          <div class="w-full px-4 mb-4 md:w-8/12 md:mb-0">
+          <div class="w-full px-4 mb-4 md:w-8/12 md:mb-0" id="shopping-cart">
             <div
               class="flex flex-start mb-4 mt-8 pb-3 border-b border-gray-200 md:border-b-0"
             >
@@ -192,8 +193,18 @@
             </div>
             <!-- END: Table title -->
 
+            <!-- START: Cart empty wrapper-->
+            <p id="cart-empty" class="hidden text-center text-lg py-8">
+              Oops.... Your cart is empty
+              <a href="details.html" class="underline">Shop Now!</a>
+            </p>
+            <!-- END: Cart empty wrapper-->
+
             <!-- START: Table item 1 -->
-            <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+            <div
+              class="flex flex-start flex-wrap items-center mb-4 -mx-4"
+              data-row="1"
+            >
               <div class="px-4 flex-none">
                 <div class="" style="width: 90px; height: 90px">
                   <img
@@ -226,6 +237,7 @@
               <div class="px-4 w-2/12">
                 <div class="text-center">
                   <button
+                    data-delete-item="1"
                     class="text-red-600 border-none focus:outline-none px-3 py-1"
                   >
                     X
@@ -236,7 +248,10 @@
             <!-- END: Table item 1 -->
 
             <!-- START: Table item 2 -->
-            <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+            <div
+              class="flex flex-start flex-wrap items-center mb-4 -mx-4"
+              data-row="2"
+            >
               <div class="px-4 flex-none">
                 <div class="" style="width: 90px; height: 90px">
                   <img
@@ -269,6 +284,7 @@
               <div class="px-4 w-2/12">
                 <div class="text-center">
                   <button
+                    data-delete-item="2"
                     class="text-red-600 border-none focus:outline-none px-3 py-1"
                   >
                     X
@@ -279,7 +295,10 @@
             <!-- END: Table item 2 -->
 
             <!-- START: Table item 3 -->
-            <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+            <div
+              class="flex flex-start flex-wrap items-center mb-4 -mx-4"
+              data-row="3"
+            >
               <div class="px-4 flex-none">
                 <div class="" style="width: 90px; height: 90px">
                   <img
@@ -312,6 +331,7 @@
               <div class="px-4 w-2/12">
                 <div class="text-center">
                   <button
+                    data-delete-item="3"
                     class="text-red-600 border-none focus:outline-none px-3 py-1"
                   >
                     X
@@ -324,7 +344,7 @@
           <!-- END: Shipping Cart -->
 
           <!-- START: Shipping Details -->
-          <div class="w-full md:px-4 md:w-4/12">
+          <div class="w-full md:px-4 md:w-4/12" id="shipping-detail">
             <div class="bg-gray-100 px-4 py-6 md:p-8 md:rounded-3xl">
               <form action="succsess.html">
                 <div class="flex flex-start mb-6">
@@ -336,6 +356,7 @@
                     >complete name</label
                   >
                   <input
+                    data-input
                     type="text"
                     id="complete-name"
                     class="border border-gray-200 rounded-lg px-2 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
@@ -350,6 +371,7 @@
                     >email address</label
                   >
                   <input
+                    data-input
                     type="email"
                     id="email-address"
                     class="border border-gray-200 rounded-lg px-2 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
@@ -364,6 +386,7 @@
                     >address</label
                   >
                   <input
+                    data-input
                     type="text"
                     id="address"
                     class="border border-gray-200 rounded-lg px-2 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
@@ -378,6 +401,7 @@
                     >phone number</label
                   >
                   <input
+                    data-input
                     type="tel"
                     id="phone-number"
                     class="border border-gray-200 rounded-lg px-2 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none"
@@ -393,6 +417,8 @@
                     <!-- START: courier 1-->
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="fedex"
+                        data-name="courier"
                         type="button"
                         class="border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full"
                       >
@@ -407,6 +433,8 @@
                     <!-- START: courier 2-->
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="fedex"
+                        data-name="dhl"
                         type="button"
                         class="border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full"
                       >
@@ -429,6 +457,8 @@
                     <!-- START: payment 1-->
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="midtrans"
+                        data-name="payment"
                         type="button"
                         class="border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full"
                       >
@@ -443,6 +473,8 @@
                     <!-- START: payment 2-->
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="mastercard"
+                        data-name="payment"
                         type="button"
                         class="border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full"
                       >
@@ -457,6 +489,8 @@
                     <!-- START: payment 3-->
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="bitcoin"
+                        data-name="payment"
                         type="button"
                         class="border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full"
                       >
@@ -471,6 +505,8 @@
                     <!-- START: payment 4-->
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="american-express"
+                        data-name="payment"
                         type="button"
                         class="border border-gray-200 focus:outline-none focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full"
                       >
@@ -487,8 +523,9 @@
                 <!-- END: choose payment -->
                 <div class="text-center">
                   <button
+                    disabled
                     type="submit"
-                    class="bg-gray-300 text-gray-400 focus:bg-red-200 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6"
+                    class="bg-pink-400 text-black focus:bg-black focus:outline-none w-full py-3 rounded-full text-lg focus:text-pink-400 transition-all duration-200 px-6"
                   >
                     Checkout Now
                   </button>
